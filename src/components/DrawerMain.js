@@ -1,5 +1,6 @@
 import { Divider, Drawer, Toolbar } from '@mui/material';
 import React from 'react'
+import DrawerListing from './DrawerListing';
 import SearchMain from './SearchMain';
 
 const DrawerMain = () => {
@@ -21,6 +22,7 @@ const DrawerMain = () => {
             root@192.168.59.102
             <Divider />
             <SearchMain />
+            <DrawerListing />
         </Drawer>
     </div>
   )
