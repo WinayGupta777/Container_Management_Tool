@@ -4,7 +4,7 @@ import AppBarComp from './components/AppBar';
 import DrawerMain from './components/DrawerMain';
 const App = () => {
   return (
-    <div>
+    <div className='App'>
       <AppBarComp />
       <DrawerMain />
     </div>
