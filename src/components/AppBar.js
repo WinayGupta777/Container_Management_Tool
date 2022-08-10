@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import BrightnessLowIcon from '@mui/icons-material/BrightnessLow';
-
+import setTheme from '../redux/themeMode/themeAction';
 
 const AppBarComp = () => {
-    const [globalThemeMode, setGlobalThemeMode] = useState(false);
+    const theme = useSelector(
+        (state)=> state.themeReducer.theme
+    );
+    const dispatch = useDispatch();
 
-    const changeTheme=()=>{
-        setGlobalThemeMode(!globalThemeMode);
-    }
     return (
         <div>
             <AppBar
@@ -26,10 +27,10 @@ const AppBarComp = () => {
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Change theme">
-                        <IconButton size='large' color='inherit' sx={{ mr: 2 }} onClick={()=>changeTheme()}>
-                            { globalThemeMode ? 
-                            <BrightnessHighIcon />
-                            : <BrightnessLowIcon />}
+                        <IconButton size='large' color='inherit' sx={{ mr: 2 }} onClick={()=>dispatch(setTheme(!theme))}>
+                            { theme ? 
+                            <BrightnessLowIcon />
+                            : <BrightnessHighIcon />}
                         </IconButton>
                     </Tooltip>
                 </Toolbar>
