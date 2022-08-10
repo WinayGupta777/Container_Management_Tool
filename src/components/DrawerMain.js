@@ -1,5 +1,6 @@
 import { Divider, Drawer, Toolbar } from '@mui/material';
 import React from 'react'
+import SearchMain from './SearchMain';
 
 const DrawerMain = () => {
   return (
@@ -19,6 +20,7 @@ const DrawerMain = () => {
             <Toolbar sx={{height: "5rem"}} />
             root@192.168.59.102
             <Divider />
+            <SearchMain />
         </Drawer>
     </div>
   )
