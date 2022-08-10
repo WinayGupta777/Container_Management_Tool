@@ -1,9 +1,11 @@
 import './App.css';
 import React from 'react'
-
+import AppBarComp from './components/AppBar';
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <AppBarComp />
+    </div>
   )
 }
 
