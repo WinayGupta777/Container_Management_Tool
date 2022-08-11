@@ -5,19 +5,28 @@ const DockerGUIHeader = () => {
     return (
         <Box
             sx={{
-                padding: 3,
-                backgroundColor: (theme) => theme.palette.mode === 'dark' ? 'black' : 'white'
+                p: 3,
+                display: 'grid',
+                gridRowGap: 15,
+                gridAutoFlow: 'column dense',
+                gridTemplateRows: 'repeat(3, 45px [row-start])',
+                gridTemplateColumns: 'repeat(5, 250px [col-start])',
+                backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#121212' : '#f1f1f1'
             }}
         >
             <Button
                 variant='contained'
-                sx={{ 
-                    backgroundColor: (theme)=>theme.palette.mode === 'dark' ? '#e8e8e8' : '#212121', 
-                    '&:hover': { 
-                        backgroundColor: (theme)=>theme.palette.mode === 'dark' ? '#9c9c9c' : '#5e5e5e',  
-                    } 
+                disableElevation
+                sx={{
+                    justifySelf: 'center',
+                    alignSelf: 'center',
+                    backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#e8e8e8' : '#212121',
+                    '&:hover': {
+                        backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#9c9c9c' : '#5e5e5e',
+                    }
                 }}
-            >List all</Button>
+            >List all  containers</Button>
+            
         </Box>
     )
 }
