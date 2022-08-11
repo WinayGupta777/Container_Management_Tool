@@ -2,7 +2,7 @@ import { Code } from '@mui/icons-material';
 import { Box, Divider, Typography } from '@mui/material';
 import React from 'react'
 import CommandPrompt from '../CommandPrompt';
-import TerminalGround from './TerminalGround';
+import TerminalGround from '../OutputGround';
 
 const Terminal = () => {
     return (
