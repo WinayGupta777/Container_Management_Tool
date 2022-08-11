@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { createTheme, Paper, ThemeProvider } from '@mui/material';
 import LayOut from './components/LayOut';
+import Terminal from './components/system/Terminal';
+import DockerCLI from './components/docker/DockerCLI';
 
 const darkTheme = createTheme({
   palette: { mode: 'dark' }
@@ -25,7 +27,8 @@ const App = () => {
             <Routes>
               <Route index element={<LayOut />} />
               <Route path="/" element={<LayOut />}>
-                <Route path="system/cli" />
+                <Route path="system/cli" element={<Terminal />} />
+                <Route path="docker/cli" element={<DockerCLI />} />
               </Route>
             </Routes>
           </Router>
