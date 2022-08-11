@@ -4,6 +4,8 @@ import ContributersMain from './ContributersMain';
 import DrawerListing from './DrawerListing';
 import SearchMain from './SearchMain';
 import SystemInfoBox from './SystemInfoBox';
+import { Outlet } from 'react-router-dom';
+import Terminal from './system/Terminal';
 
 const DrawerMain = () => {
     return (
@@ -30,7 +32,7 @@ const DrawerMain = () => {
             </Drawer>
 
             <Box>
-                
+                <Terminal />
             </Box>
         </div>
     )
