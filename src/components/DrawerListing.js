@@ -23,7 +23,7 @@ const DrawerListing = () => {
     return (
         <div>
             <Box>
-                <List>
+                <List sx={{ padding: 0 }}>
                     <Divider sx={{ backgroundColor: 'gray' }} />
                     {/* System */}
                     <ListItemButton onClick={() => handleClick('1')}>
