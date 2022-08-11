@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react'
-import AppBarComp from './components/AppBar';
-import DrawerMain from './components/DrawerMain';
-import { createTheme, Paper, ThemeProvider } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { createTheme, Paper, ThemeProvider } from '@mui/material';
+import LayOut from './components/LayOut';
 
 const darkTheme = createTheme({
   palette: { mode: 'dark' }
@@ -17,12 +17,19 @@ const App = () => {
   );
 
   return (
-    <ThemeProvider theme={globeTheme ?  darkTheme : lightTheme }>
+    <ThemeProvider theme={globeTheme ? darkTheme : lightTheme}>
       <Paper style={{ height: "100vh" }} square={true}>
-
         <div className='App'>
-          <AppBarComp />
-          <DrawerMain />
+
+          <Router>
+            <Routes>
+              <Route index element={<LayOut />} />
+              <Route path="/" element={<LayOut />}>
+                <Route path="system/cli" />
+              </Route>
+            </Routes>
+          </Router>
+
         </div>
       </Paper>
     </ThemeProvider>
