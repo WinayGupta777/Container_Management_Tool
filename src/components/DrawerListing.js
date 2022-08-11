@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Box, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, SvgIcon } from '@mui/material';
-import { ArrowDropDown, OndemandVideo, FileCopy } from '@mui/icons-material';
+import { ArrowDropDown, OndemandVideo, FileCopy, CloudQueue } from '@mui/icons-material';
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows"
-import { ReactComponent as Termi } from "../assets/TerminalIcon.svg";
-import { ReactComponent as PodC } from "../assets/docker1.svg";
-import { ReactComponent as GuiClick } from "../assets/GuiClick.svg";
-import { ReactComponent as K8s } from "../assets/k8s.svg";
+import { ReactComponent as Termi } from "../static/Icons/TerminalIcon.svg";
+import { ReactComponent as PodC } from "../static/Icons/docker1.svg";
+import { ReactComponent as GuiClick } from "../static/Icons/GuiClick.svg";
+import { ReactComponent as K8s } from "../static/Icons/k8s.svg";
 
 
 const DrawerListing = () => {
@@ -49,7 +49,7 @@ const DrawerListing = () => {
 
                     <Divider sx={{ backgroundColor: 'gray' }} />
 
-                    {/* Docker */}
+                    {/* Kubernetes */}
                     <ListItemButton onClick={() => handleClick('3')}>
                         <ListItemIcon>
                             <SvgIcon component={K8s} inheritViewBox></SvgIcon>
@@ -58,6 +58,8 @@ const DrawerListing = () => {
                         <ArrowDropDown />
                     </ListItemButton>
                     <KubernetesCollapse isOn={open3} />
+
+                    <Divider sx={{ backgroundColor: 'gray' }} />
                 </List>
             </Box>
         </div>
@@ -117,6 +119,14 @@ const DockerCollapse = (props) => {
                         <FileCopy />
                     </ListItemIcon>
                     <ListItemText primary="Docker docs" />
+                </ListItemButton>
+
+                <Divider sx={{ marginLeft: 5 }} />
+                <ListItemButton sx={{ pl: 5 }} >
+                    <ListItemIcon>
+                        <CloudQueue />
+                    </ListItemIcon>
+                    <ListItemText primary="Docker Hub" />
                 </ListItemButton>
             </Collapse>
         </>

@@ -1,5 +1,6 @@
-import { Divider, Drawer, Toolbar } from '@mui/material';
 import React from 'react'
+import { Drawer, Toolbar } from '@mui/material';
+import ContributersMain from './ContributersMain';
 import DrawerListing from './DrawerListing';
 import SearchMain from './SearchMain';
 import SystemInfoBox from './SystemInfoBox';
@@ -24,6 +25,8 @@ const DrawerMain = () => {
                 {/* <Divider /> */}
                 {/* <SearchMain /> */}
                 <DrawerListing />
+                <Toolbar sx={{ flexGrow: 1 }} />
+                <ContributersMain />
             </Drawer>
         </div>
     )
