@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react'
 import ButtonNormal from './ButtonNormal';
+import ButtonWithSingleInput from './ButtonWithSingleInput';
 
 const DockerGUIHeader = () => {
     return (
@@ -15,9 +16,14 @@ const DockerGUIHeader = () => {
         >
             <ButtonNormal text="List all containers" cmd="podman ps -a" />
             <ButtonNormal text="List running containers" cmd="podman ps" />
+            <ButtonNormal text="List stopped containers" cmd="podman images" />
             <ButtonNormal text="List images" cmd="podman images" />
             <ButtonNormal text="List networks" cmd="podman network ls" />
-            <ButtonNormal text="Show container logs" cmd="podman log" />
+            <ButtonWithSingleInput text="Show container log" label="Container ID" cmd="podman logs " />
+            <ButtonWithSingleInput text="Pull docker image" label="Image name" cmd="podman pull " />
+            <ButtonWithSingleInput text="Remove image" label="Image name" cmd="podman rmi " />
+            <ButtonWithSingleInput text="Search image on hub" label="Image name" cmd="podman search " />
+            <ButtonWithSingleInput text="Show image history" label="Image name" cmd="podman history " />
         </Box>
     )
 }
