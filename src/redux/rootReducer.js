@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import themeReducer from "./themeMode/themeReducer";
+import groundReducer from "./groundOutput/groundReducer";
 
 const rootReducer = combineReducers({
-    themeReducer
+    themeReducer,
+    groundReducer
 });
 
 export default rootReducer;
