@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Popover, TextField } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import setOutput from '../../redux/groundOutput/groundAction';
 
@@ -10,6 +10,10 @@ const ButtonWithSingleInput = (props) => {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
     const dispatch = useDispatch();
+    const globeIp = useSelector(
+        (state) => state.ipReducer.ip
+    );
+
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -24,7 +28,7 @@ const ButtonWithSingleInput = (props) => {
 
     const sendRequest = async () => {
         console.log("Sending Request -->");
-        await axios.post("http://" + "192.168.59.102" + ":5000/podcli", {
+        await axios.post(`http://${globeIp}:5000/podcli`, {
             cmd: value
         })
             .then((r) => {

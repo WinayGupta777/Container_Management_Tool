@@ -1,26 +1,29 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import setOutput from '../../redux/groundOutput/groundAction';
 
 const ButtonNormal = (props) => {
     const dispatch = useDispatch();
+    const globeIp = useSelector(
+        (state) => state.ipReducer.ip
+    );
 
 
-    const sendRequest =async () => {
+    const sendRequest = async () => {
         console.log("Sending Request -->");
-        await axios.post("http://" + "192.168.59.102" + ":5000/podcli", {
+        await axios.post(`http://${globeIp}:5000/podcli`, {
             cmd: props.cmd
         })
-        .then((r)=>{
-            //console.log("OP" + r.data);
-            dispatch(setOutput(r.data));
-        })
-        .catch((err)=>{
-            // console.log("Err" + err.message);
-            dispatch(setOutput(err.message));
-        });
+            .then((r) => {
+                //console.log("OP" + r.data);
+                dispatch(setOutput(r.data));
+            })
+            .catch((err) => {
+                // console.log("Err" + err.message);
+                dispatch(setOutput(err.message));
+            });
     }
     return (
         <Button

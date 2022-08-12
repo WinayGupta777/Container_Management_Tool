@@ -1,7 +1,6 @@
 import React from 'react'
 import { SwapHoriz } from "@mui/icons-material";
 import { Box, Button, IconButton, Popover, TextField, Typography, Tooltip } from "@mui/material";
-import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import setIp from "../redux/ip/ipAction";
