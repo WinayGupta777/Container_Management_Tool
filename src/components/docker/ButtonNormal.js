@@ -14,12 +14,12 @@ const ButtonNormal = (props) => {
             cmd: props.cmd
         })
         .then((r)=>{
-            console.log(r.data);
+            //console.log("OP" + r.data);
             dispatch(setOutput(r.data));
         })
         .catch((err)=>{
-            console.log(err);
-            dispatch(setOutput(err));
+            // console.log("Err" + err.message);
+            dispatch(setOutput(err.message));
         });
     }
     return (
