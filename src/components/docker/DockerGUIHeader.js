@@ -13,7 +13,11 @@ const DockerGUIHeader = () => {
                 backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#121212' : '#f1f1f1'
             }}
         >
-            <ButtonNormal text="List all containers" cmd="podman info" />
+            <ButtonNormal text="List all containers" cmd="podman ps -a" />
+            <ButtonNormal text="List running containers" cmd="podman ps" />
+            <ButtonNormal text="List images" cmd="podman images" />
+            <ButtonNormal text="List networks" cmd="podman network ls" />
+            <ButtonNormal text="Show container logs" cmd="podman log" />
         </Box>
     )
 }

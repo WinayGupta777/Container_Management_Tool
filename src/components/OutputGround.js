@@ -17,7 +17,7 @@ const OutputGround = () => {
         borderRadius: 2,
         overflow: 'auto',
         p: 2,
-        backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#222529' : 'black',
+        backgroundColor: (theme) => theme.palette.mode === 'dark' ? '#222529' : '#e6ffec',
       }}
     >
       <pre>

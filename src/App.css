@@ -7,3 +7,12 @@
 .App {
   font-family: "Roboto";
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(107, 107, 107);
+  border-radius: 10px;
+}
