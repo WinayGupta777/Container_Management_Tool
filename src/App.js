@@ -6,6 +6,7 @@ import { createTheme, Paper, ThemeProvider } from '@mui/material';
 import LayOut from './components/LayOut';
 import Terminal from './components/system/Terminal';
 import DockerCLI from './components/docker/DockerCLI';
+import DockerGUI from './components/docker/DockerGUI';
 
 const darkTheme = createTheme({
   palette: { mode: 'dark' }
@@ -29,6 +30,7 @@ const App = () => {
               <Route path="/" element={<LayOut />}>
                 <Route path="system/cli" element={<Terminal />} />
                 <Route path="docker/cli" element={<DockerCLI />} />
+                <Route path="docker/gui" element={<DockerGUI /> } />
               </Route>
             </Routes>
           </Router>

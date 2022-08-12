@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { Box, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, SvgIcon } from '@mui/material';
 import { ArrowDropDown, OndemandVideo, FileCopy, CloudQueue } from '@mui/icons-material';
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows"
@@ -70,11 +71,12 @@ export default DrawerListing;
 
 
 const SystemCollapse = (props) => {
+    const navigate = useNavigate();
     return (
         <>
             <Collapse in={props.isOn} timeout="auto" unmountOnExit>
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }} onClick={()=>navigate("system/cli")}>
                     <ListItemIcon>
                         <SvgIcon component={Termi} inheritViewBox></SvgIcon>
                     </ListItemIcon>
@@ -86,11 +88,12 @@ const SystemCollapse = (props) => {
 };
 
 const DockerCollapse = (props) => {
+    const navigate = useNavigate();
     return (
         <>
             <Collapse in={props.isOn} timeout="auto" unmountOnExit>
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }} onClick={()=>navigate("docker/cli")} >
                     <ListItemIcon>
                         <SvgIcon component={Termi} inheritViewBox></SvgIcon>
                     </ListItemIcon>
@@ -98,7 +101,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
 
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }}  onClick={()=>navigate("docker/gui")}>
                     <ListItemIcon>
                         <SvgIcon component={GuiClick} inheritViewBox></SvgIcon>
                     </ListItemIcon>

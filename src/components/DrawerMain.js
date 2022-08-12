@@ -4,7 +4,7 @@ import ContributersMain from './ContributersMain';
 import DrawerListing from './DrawerListing';
 // import SearchMain from './SearchMain';
 import SystemInfoBox from './SystemInfoBox';
-// import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 // import Terminal from './system/Terminal';
 // import DockerCLI from "./docker/DockerCLI";
 import DockerGUI from './docker/DockerGUI';
@@ -34,7 +34,7 @@ const DrawerMain = () => {
             </Drawer>
 
             <Box>
-                <DockerGUI />
+                <Outlet />
             </Box>
         </div>
     )
