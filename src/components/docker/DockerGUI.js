@@ -1,7 +1,6 @@
 import React from 'react'
 import { Code } from '@mui/icons-material';
 import { Box, Divider, Typography } from '@mui/material';
-import CommandPrompt from '../CommandPrompt';
 import DockerGUIHeader from './DockerGUIHeader';
 import OutputGround from "../OutputGround";
 

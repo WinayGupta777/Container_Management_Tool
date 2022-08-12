@@ -22,7 +22,7 @@ const CommandPrompt = () => {
                     '& input': {fontSize: 26,fontFamily: 'consolas'},
                     "& .MuiOutlinedInput-root.Mui-focused": {
                         "& > fieldset": {
-                            borderColor: (theme)=> theme.palette.mode == 'dark' ? 'white': 'black',
+                            borderColor: (theme)=> theme.palette.mode === 'dark' ? 'white': 'black',
                         }
                     }
                 }}
