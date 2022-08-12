@@ -2,7 +2,7 @@ import React from 'react'
 import { Code } from '@mui/icons-material';
 import { Box, Divider, Typography } from '@mui/material';
 import CommandPrompt from '../CommandPrompt';
-import TerminalGround from '../OutputGround';
+import OutputGround from '../OutputGround';
 
 const DockerCLI = () => {
     return (
@@ -20,7 +20,7 @@ const DockerCLI = () => {
             >
                 <CommandPrompt />
                 <Divider sx={{ mt: 4, mb: 4 }} />
-                <TerminalGround />
+                <OutputGround plateform="dockercli" />
             </Box>
         </Box>
     )

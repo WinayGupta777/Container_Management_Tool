@@ -20,7 +20,7 @@ const Terminal = () => {
             >
                 <CommandPrompt />
                 <Divider sx={{mt:4, mb:4}} />
-                <OutputGround />
+                <OutputGround plateform="systemcli" />
             </Box>
         </Box>
     )

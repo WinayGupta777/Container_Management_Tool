@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Popover, TextField } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import setOutput from '../../redux/groundOutput/groundAction';
+import {setDockerGUIOutput} from "../../redux/groundOutput/groundAction";
 
 const ButtonWithSingleInput = (props) => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -33,11 +33,11 @@ const ButtonWithSingleInput = (props) => {
         })
             .then((r) => {
                 // console.log("OP" + r.data);
-                dispatch(setOutput(r.data));
+                dispatch(setDockerGUIOutput(r.data));
             })
             .catch((err) => {
                 // console.log("ERROR"  + err.message);
-                dispatch(setOutput(err.message));
+                dispatch(setDockerGUIOutput(err.message));
             });
         setAnchorEl(null);
     }

@@ -20,7 +20,7 @@ const DockerGUI = () => {
             >
                 <DockerGUIHeader />
                 <Divider sx={{ mt: 4, mb: 4 }} />
-                <OutputGround />
+                <OutputGround  plateform="dockergui" />
             </Box>
         </Box>
     )
