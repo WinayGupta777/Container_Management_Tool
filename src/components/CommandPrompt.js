@@ -30,6 +30,11 @@ const CommandPrompt = (props) => {
             }
         }).catch((err)=>{
             console.log(err)
+            if(props.for === "syscli") {
+                dispatch(setSystemCLIOutput(err.message));
+            } else if(props.for === "doccli") {
+                dispatch(setDockerCLIOutput(err.message));
+            }
         })
     }
 
