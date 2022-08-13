@@ -27,7 +27,13 @@ const DrawerListing = () => {
                 <List sx={{ padding: 0 }}>
                     <Divider sx={{ backgroundColor: 'gray' }} />
                     {/* System */}
-                    <ListItemButton onClick={() => handleClick('1')}>
+                    <ListItemButton
+                        sx={{
+                            borderLeftStyle: open1 ? 'solid' : 'hidden',
+                            borderLeftWidth: 3,
+                            borderLeftColor: (theme) => theme.palette.mode === 'dark' ? 'yellow' : 'black'
+                        }}
+                        onClick={() => handleClick('1')}>
                         <ListItemIcon>
                             <DesktopWindowsIcon />
                         </ListItemIcon>
@@ -39,7 +45,13 @@ const DrawerListing = () => {
                     <Divider sx={{ backgroundColor: 'gray' }} />
 
                     {/* Docker */}
-                    <ListItemButton onClick={() => handleClick('2')}>
+                    <ListItemButton
+                        sx={{
+                            borderLeftStyle: open2 ? 'solid' : 'hidden',
+                            borderLeftWidth: 3,
+                            borderLeftColor: (theme) => theme.palette.mode === 'dark' ? 'yellow' : 'black'
+                        }}
+                        onClick={() => handleClick('2')}>
                         <ListItemIcon>
                             <SvgIcon component={PodC} inheritViewBox></SvgIcon>
                         </ListItemIcon>
@@ -51,7 +63,13 @@ const DrawerListing = () => {
                     <Divider sx={{ backgroundColor: 'gray' }} />
 
                     {/* Kubernetes */}
-                    <ListItemButton onClick={() => handleClick('3')}>
+                    <ListItemButton
+                        sx={{
+                            borderLeftStyle: open3 ? 'solid' : 'hidden',
+                            borderLeftWidth: 3,
+                            borderLeftColor: (theme) => theme.palette.mode === 'dark' ? 'yellow' : 'black'
+                        }}
+                        onClick={() => handleClick('3')}>
                         <ListItemIcon>
                             <SvgIcon component={K8s} inheritViewBox></SvgIcon>
                         </ListItemIcon>
@@ -124,7 +142,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
 
-                <ListItemButton sx={{ pl: 5 }} onClick={()=>openWeb('tutor')} >
+                <ListItemButton sx={{ pl: 5 }} onClick={() => openWeb('tutor')} >
                     <ListItemIcon>
                         <OndemandVideo />
                     </ListItemIcon>
@@ -132,7 +150,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
 
-                <ListItemButton sx={{ pl: 5 }} onClick={()=>openWeb('docs')} >
+                <ListItemButton sx={{ pl: 5 }} onClick={() => openWeb('docs')} >
                     <ListItemIcon>
                         <FileCopy />
                     </ListItemIcon>
@@ -140,7 +158,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
 
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }} onClick={()=>openWeb('hub')} >
+                <ListItemButton sx={{ pl: 5 }} onClick={() => openWeb('hub')} >
                     <ListItemIcon>
                         <CloudQueue />
                     </ListItemIcon>
