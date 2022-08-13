@@ -1,9 +1,8 @@
 import React from 'react'
-import { Code } from '@mui/icons-material';
-import { Box, Divider, Typography } from '@mui/material';
+import { Box, Divider, SvgIcon, Typography } from '@mui/material';
 import DockerGUIHeader from './DockerGUIHeader';
 import OutputGround from "../OutputGround";
-
+import { ReactComponent as GuiClick } from "../../static/Icons/GuiClick.svg";
 const DockerGUI = () => {
     return (
         <Box
@@ -11,7 +10,7 @@ const DockerGUI = () => {
         >
             <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', ml: 5, p: 2 }}>
                 <Typography variant='h4' >Docker GUI</Typography>
-                <Code color="white" sx={{ pl: 2 }} />
+                <SvgIcon component={GuiClick} inheritViewBox sx={{ pl:2 }}></SvgIcon>
             </Box>
             <Divider />
 
