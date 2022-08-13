@@ -16,14 +16,17 @@ const DockerGUIHeader = () => {
         >
             <ButtonNormal text="List all containers" cmd="podman ps -a" />
             <ButtonNormal text="List running containers" cmd="podman ps" />
-            <ButtonNormal text="List stopped containers" cmd="podman images" />
+            <ButtonNormal text="List stopped containers" cmd="echo ... " />
             <ButtonNormal text="List images" cmd="podman images" />
             <ButtonNormal text="List networks" cmd="podman network ls" />
-            <ButtonWithSingleInput text="Show container log" label="Container ID" cmd="podman logs " />
+            <ButtonWithSingleInput text="Show container log" label="Container id/name" cmd="podman logs " />
             <ButtonWithSingleInput text="Pull docker image" label="Image name" cmd="podman pull " />
             <ButtonWithSingleInput text="Remove image" label="Image name" cmd="podman rmi " />
-            <ButtonWithSingleInput text="Search image on hub" label="Image name" cmd="podman search " />
+            <ButtonWithSingleInput text="Search image on hub" label="Keywords" cmd="podman search " />
             <ButtonWithSingleInput text="Show image history" label="Image name" cmd="podman history " />
+            <ButtonWithSingleInput text="Start container" label="Container id/name" cmd="podman start " />
+            <ButtonWithSingleInput text="Stop container" label="Container id/name" cmd="podman stop " />
+            <ButtonWithSingleInput text="Run container" label="Image name" cmd="podman stop " />
         </Box>
     )
 }
