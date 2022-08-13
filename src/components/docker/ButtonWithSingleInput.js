@@ -33,8 +33,12 @@ const ButtonWithSingleInput = (props) => {
             cmd: value
         })
             .then((r) => {
-                // console.log("OP" + r.data);
-                dispatch(setDockerGUIOutput(r.data));
+                // console.log(typeof(r.data))
+                if(typeof(r.data)==="object"){
+                    dispatch(setDockerGUIOutput(JSON.stringify(r.data, null, 2)));
+                } else {
+                    dispatch(setDockerGUIOutput(r.data));
+                }
             })
             .catch((err) => {
                 // console.log("ERROR"  + err.message);
@@ -70,7 +74,7 @@ const ButtonWithSingleInput = (props) => {
                     vertical: 'bottom',
                     horizontal: 'left',
                 }}
-                PaperProps={{ style: { width: '19vw', padding: "20px" } }}
+                PaperProps={{ style: { width: '17vw', padding: "20px" } }}
             >
                 <TextField
                     autoComplete="off"
