@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Box, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, SvgIcon } from '@mui/material';
-import { ArrowDropDown, OndemandVideo, FileCopy, CloudQueue } from '@mui/icons-material';
+import { ArrowDropDown, ArrowRight, OndemandVideo, FileCopy, CloudQueue } from '@mui/icons-material';
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows"
 import { ReactComponent as Termi } from "../static/Icons/TerminalIcon.svg";
 import { ReactComponent as PodC } from "../static/Icons/docker1.svg";
@@ -38,7 +38,7 @@ const DrawerListing = () => {
                             <DesktopWindowsIcon />
                         </ListItemIcon>
                         <ListItemText primary="System" />
-                        <ArrowDropDown />
+                        { open1 ? <ArrowDropDown /> : <ArrowRight /> }
                     </ListItemButton>
                     <SystemCollapse isOn={open1} />
 
@@ -56,7 +56,7 @@ const DrawerListing = () => {
                             <SvgIcon component={PodC} inheritViewBox></SvgIcon>
                         </ListItemIcon>
                         <ListItemText primary="Docker" />
-                        <ArrowDropDown />
+                        { open2 ? <ArrowDropDown /> : <ArrowRight /> }
                     </ListItemButton>
                     <DockerCollapse isOn={open2} />
 
@@ -74,7 +74,7 @@ const DrawerListing = () => {
                             <SvgIcon component={K8s} inheritViewBox></SvgIcon>
                         </ListItemIcon>
                         <ListItemText primary="Kubernetes" />
-                        <ArrowDropDown />
+                        { open3 ? <ArrowDropDown /> : <ArrowRight /> }
                     </ListItemButton>
                     <KubernetesCollapse isOn={open3} />
 
