@@ -12,6 +12,11 @@ const AppBarComp = () => {
     );
     const dispatch = useDispatch();
 
+    const gotoGitHub=()=>{
+        var url = "https://github.com/WinayGupta777/Container_Management_Tool";
+        window.open(url, "_blank");
+    }
+
     return (
         <div>
             <AppBar
@@ -22,7 +27,7 @@ const AppBarComp = () => {
                 <Toolbar>
                     <Typography variant="h4" component="div" noWrap sx={{ flexGrow: 1 }}>Conatiner Management Tool</Typography>
                     <Tooltip title="Source code">
-                        <IconButton size='large' color='inherit' sx={{ mr: 2 }}>
+                        <IconButton size='large' color='inherit' sx={{ mr: 2 }} onClick={gotoGitHub}>
                             <GitHubIcon />
                         </IconButton>
                     </Tooltip>
