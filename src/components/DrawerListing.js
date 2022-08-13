@@ -76,7 +76,7 @@ const SystemCollapse = (props) => {
         <>
             <Collapse in={props.isOn} timeout="auto" unmountOnExit>
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }} onClick={()=>navigate("system/cli")}>
+                <ListItemButton sx={{ pl: 5 }} onClick={() => navigate("system/cli")}>
                     <ListItemIcon>
                         <SvgIcon component={Termi} inheritViewBox></SvgIcon>
                     </ListItemIcon>
@@ -89,11 +89,26 @@ const SystemCollapse = (props) => {
 
 const DockerCollapse = (props) => {
     const navigate = useNavigate();
+
+    const openWeb = (site) => {
+        if (site === "tutor") {
+            const url = "https://youtube.com/playlist?list=PLAi9X1uG6jZ30QGz7FZ55A27jPeY8EwkE";
+            window.open(url, "_blank");
+        }
+        else if (site === "docs") {
+            const url1 = "https://docs.docker.com/engine/reference/commandline/cli/";
+            window.open(url1, "_blank");
+        }
+        else if (site === "hub") {
+            const url2 = "https://hub.docker.com/search?q=";
+            window.open(url2, "_blank");
+        }
+    }
     return (
         <>
             <Collapse in={props.isOn} timeout="auto" unmountOnExit>
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }} onClick={()=>navigate("docker/cli")} >
+                <ListItemButton sx={{ pl: 5 }} onClick={() => navigate("docker/cli")} >
                     <ListItemIcon>
                         <SvgIcon component={Termi} inheritViewBox></SvgIcon>
                     </ListItemIcon>
@@ -101,7 +116,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
 
-                <ListItemButton sx={{ pl: 5 }}  onClick={()=>navigate("docker/gui")}>
+                <ListItemButton sx={{ pl: 5 }} onClick={() => navigate("docker/gui")}>
                     <ListItemIcon>
                         <SvgIcon component={GuiClick} inheritViewBox></SvgIcon>
                     </ListItemIcon>
@@ -109,7 +124,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
 
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }} onClick={()=>openWeb('tutor')} >
                     <ListItemIcon>
                         <OndemandVideo />
                     </ListItemIcon>
@@ -117,7 +132,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
 
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }} onClick={()=>openWeb('docs')} >
                     <ListItemIcon>
                         <FileCopy />
                     </ListItemIcon>
@@ -125,7 +140,7 @@ const DockerCollapse = (props) => {
                 </ListItemButton>
 
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }} >
+                <ListItemButton sx={{ pl: 5 }} onClick={()=>openWeb('hub')} >
                     <ListItemIcon>
                         <CloudQueue />
                     </ListItemIcon>
