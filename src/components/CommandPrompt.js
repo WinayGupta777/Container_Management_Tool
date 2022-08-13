@@ -22,7 +22,7 @@ const CommandPrompt = (props) => {
             cmd: value
         })
         .then((r)=>{
-            console.log(r.data);
+            //console.log(r.data);
             if(props.for === "syscli") {
                 dispatch(setSystemCLIOutput(r.data));
             } else if(props.for === "doccli") {
