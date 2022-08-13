@@ -18,7 +18,7 @@ const DockerCLI = () => {
             <Box
                 sx={{ pl: 5, pr: 5, mt: 4 }}
             >
-                <CommandPrompt />
+                <CommandPrompt for="doccli" />
                 <Divider sx={{ mt: 4, mb: 4 }} />
                 <OutputGround plateform="dockercli" />
             </Box>

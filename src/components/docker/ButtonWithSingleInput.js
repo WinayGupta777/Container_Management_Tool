@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Button, Popover, TextField } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import {setDockerGUIOutput} from "../../redux/groundOutput/groundAction";
+import { setDockerGUIOutput } from "../../redux/groundOutput/groundAction";
 
 const ButtonWithSingleInput = (props) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [value, setValue] = useState("");
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
+    
     const dispatch = useDispatch();
     const globeIp = useSelector(
         (state) => state.ipReducer.ip
@@ -85,7 +86,8 @@ const ButtonWithSingleInput = (props) => {
                     sx={{ mt: 1, ml: 1 }}
                 >Done</Button>
 
-            </Popover> </>
+            </Popover>
+        </>
     )
 }
 
