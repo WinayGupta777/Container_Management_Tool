@@ -1,8 +1,8 @@
 
 const initialState = {
-    s_cli_output: "System Terminal  :: Command Output will display here",
-    d_cli_output: "Docker CLI  :: Command Output will display here",
-    d_gui_output: "Docker GUI  :: Command Output will display here",
+    s_cli_output: "System Terminal",
+    d_cli_output: "Docker CLI",
+    d_gui_output: "Docker GUI",
 }
 
 const groundReducer = (state=initialState, action) =>{
