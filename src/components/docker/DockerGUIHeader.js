@@ -17,7 +17,7 @@ const DockerGUIHeader = () => {
         >
             <ButtonNormal text="List all containers" cmd="podman ps -a" />
             <ButtonNormal text="List running containers" cmd="podman ps" />
-            <ButtonNormal text="List stopped containers" cmd="echo ... " />
+            <ButtonNormal text="List stopped containers" cmd="podman ps -a | grep Exited" />
             <ButtonNormal text="List images" cmd="podman images" />
             <ButtonNormal text="List networks" cmd="podman network ls" />
             
