@@ -3,22 +3,28 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, SvgIcon } from '@mui/material';
 import { ArrowDropDown, ArrowRight, OndemandVideo, FileCopy, CloudQueue } from '@mui/icons-material';
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows"
+import PlayLessonIcon from '@mui/icons-material/PlayLesson';
+import SettingsIcon from '@mui/icons-material/Settings';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import KeyIcon from '@mui/icons-material/Key';
 import { ReactComponent as Termi } from "../static/Icons/TerminalIcon.svg";
 import { ReactComponent as PodC } from "../static/Icons/docker1.svg";
 import { ReactComponent as GuiClick } from "../static/Icons/GuiClick.svg";
 import { ReactComponent as K8s } from "../static/Icons/k8s.svg";
-
+import { ReactComponent as Ansible } from "../static/Icons/AnsibleLogo.svg";
 
 const DrawerListing = () => {
 
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
+    const [open4, setOpen4] = useState(false);
 
     const handleClick = (num) => {
         if (num === "1") setOpen1(!open1);
         if (num === "2") setOpen2(!open2);
         if (num === "3") setOpen3(!open3);
+        if (num === "4") setOpen4(!open4);
     }
 
     return (
@@ -77,6 +83,24 @@ const DrawerListing = () => {
                         { open3 ? <ArrowDropDown /> : <ArrowRight /> }
                     </ListItemButton>
                     <KubernetesCollapse isOn={open3} />
+
+                    <Divider sx={{ backgroundColor: 'gray' }} />
+
+                    {/* Ansible */}
+                    <ListItemButton
+                        sx={{
+                            borderLeftStyle: open4 ? 'solid' : 'hidden',
+                            borderLeftWidth: 3,
+                            borderLeftColor: (theme) => theme.palette.mode === 'dark' ? 'yellow' : 'black'
+                        }}
+                        onClick={() => handleClick('4')}>
+                        <ListItemIcon>
+                            <SvgIcon component={Ansible} inheritViewBox></SvgIcon>
+                        </ListItemIcon>
+                        <ListItemText primary="Ansible" />
+                        { open4 ? <ArrowDropDown /> : <ArrowRight /> }
+                    </ListItemButton>
+                    <AnsibleCollapse isOn={open4} />
 
                     <Divider sx={{ backgroundColor: 'gray' }} />
                 </List>
@@ -193,6 +217,43 @@ const KubernetesCollapse = (props) => {
                         <FileCopy />
                     </ListItemIcon>
                     <ListItemText primary="Kubernetes docs" />
+                </ListItemButton>
+            </Collapse>
+        </>
+    );
+};
+
+const AnsibleCollapse = (props) => {
+    return (
+        <>
+            <Collapse in={props.isOn} timeout="auto" unmountOnExit>
+                <Divider sx={{ marginLeft: 5 }} />
+                <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemIcon>
+                        <SettingsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Configuration" />
+                </ListItemButton>
+                <Divider sx={{ marginLeft: 5 }} />
+                <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemIcon>
+                        <PlayLessonIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Playbooks" />
+                </ListItemButton>
+                <Divider sx={{ marginLeft: 5 }} />
+                <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemIcon>
+                        <FolderOpenIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Roles" />
+                </ListItemButton>
+                <Divider sx={{ marginLeft: 5 }} />
+                <ListItemButton sx={{ pl: 5 }}>
+                    <ListItemIcon>
+                        <KeyIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Vault" />
                 </ListItemButton>
             </Collapse>
         </>
