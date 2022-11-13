@@ -224,11 +224,13 @@ const KubernetesCollapse = (props) => {
 };
 
 const AnsibleCollapse = (props) => {
+    const navigate = useNavigate();
+    
     return (
         <>
             <Collapse in={props.isOn} timeout="auto" unmountOnExit>
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }} onClick={() => navigate("ansible/configure")} >
                     <ListItemIcon>
                         <SettingsIcon />
                     </ListItemIcon>
