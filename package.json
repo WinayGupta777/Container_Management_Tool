@@ -11,6 +11,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "@uiw/codemirror-extensions-langs": "^4.13.2",
+    "@uiw/codemirror-theme-bbedit": "^4.13.2",
     "@uiw/codemirror-theme-dracula": "^4.13.2",
     "@uiw/react-codemirror": "^4.13.2",
     "axios": "^0.27.2",
