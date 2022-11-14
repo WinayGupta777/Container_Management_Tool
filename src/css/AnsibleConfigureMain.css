@@ -1,0 +1,7 @@
+.cfg, .inv {
+    margin: 2% 1%;
+    width: 48%;
+    height: 94;
+    border: 1px solid rgb(58, 58, 58);
+    border-radius: 5px;
+}
