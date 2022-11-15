@@ -6,3 +6,20 @@
     border-radius: 5px;
     overflow: hidden;
 }
+
+.fileheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fileLoc {
+    font-family: 'consolas';
+    padding: 1.2px 3px;
+    border-radius: 3px;
+}
+#fileBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

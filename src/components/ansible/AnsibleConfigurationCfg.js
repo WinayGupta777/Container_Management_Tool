@@ -1,9 +1,10 @@
 import React from 'react'
-import { Box, Divider, Typography } from '@mui/material';
+import { Box, Divider, IconButton, Typography } from '@mui/material';
 import CodeMirror from "@uiw/react-codemirror";
 import { dracula } from '@uiw/codemirror-theme-dracula';
 import { bbedit } from '@uiw/codemirror-theme-bbedit';
 //import { loadLanguage } from '@uiw/codemirror-extensions-langs';
+import SaveIcon from '@mui/icons-material/Save';
 import { useSelector } from 'react-redux';
 import "../../css/AnsibleConfigureMain.css";
 
@@ -13,16 +14,27 @@ const AnsibleConfigurationCfg = () => {
   );
   return (
     <Box className='cfg'>
-      <Typography sx={{ p: 1, fontFamily: 'consolas', fontWeight: '600' }}>ansible.cfg</Typography>
+      <div className='fileheader'>
+        <div id='fileBlock'>
+          <Typography sx={{ p: 1, fontFamily: 'consolas', fontWeight: '600' }}>ansible.cfg</Typography>
+          <Box 
+            className='fileLoc'
+            sx={{ backgroundColor: globeTheme ? '#282a36' : '#e6ffec' }}
+          >/etc/ansible/ansible.cfg</Box>
+        </div>
+        <IconButton>
+          <SaveIcon />
+        </IconButton>
+      </div>
       <Divider />
 
-      <CodeMirror 
+      <CodeMirror
         width='auto'
         height='82vh'
         //value={code}
         theme={globeTheme ? dracula : bbedit}
         //onChange={(editor)=>onCodeChange(editor)}
-        style={{fontSize: 20}}
+        style={{ fontSize: 20 }}
       />
     </Box>
   )
