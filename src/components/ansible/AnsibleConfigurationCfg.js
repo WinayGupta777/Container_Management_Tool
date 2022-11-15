@@ -9,9 +9,17 @@ import { useSelector } from 'react-redux';
 import "../../css/AnsibleConfigureMain.css";
 
 const AnsibleConfigurationCfg = () => {
-  const globeTheme = useSelector(
-    (state) => state.themeReducer.theme
-  );
+  const globeTheme = useSelector((state) => state.themeReducer.theme);
+  const cfgData = 
+`[defaults]
+inventory = /etc/ansible/hosts
+
+[privilege_escalation]
+become = yes
+become_method = sudo
+become_user = root
+become_ask_pass = no`;
+  
   return (
     <Box className='cfg'>
       <div className='fileheader'>
@@ -31,7 +39,7 @@ const AnsibleConfigurationCfg = () => {
       <CodeMirror
         width='auto'
         height='82vh'
-        //value={code}
+        value={cfgData}
         theme={globeTheme ? dracula : bbedit}
         //onChange={(editor)=>onCodeChange(editor)}
         style={{ fontSize: 20 }}

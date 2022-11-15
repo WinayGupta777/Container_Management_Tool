@@ -9,9 +9,16 @@ import SaveIcon from '@mui/icons-material/Save';
 import "../../css/AnsibleConfigureMain.css";
 
 const AnsibleConfigurationInv = () => {
-  const globeTheme = useSelector(
-    (state) => state.themeReducer.theme
-  );
+  const globeTheme = useSelector((state) => state.themeReducer.theme);
+  const invData = 
+`[dev]
+node1.example.com
+
+[test]
+node2.example.com
+
+[prod]
+node[3:4].example.com`;
   return (
     <Box className='inv'>
       <div className='fileheader'>
@@ -31,7 +38,7 @@ const AnsibleConfigurationInv = () => {
       <CodeMirror
         width='auto'
         height='82vh'
-        //value={code}
+        value={invData}
         theme={globeTheme ? dracula : bbedit}
         //onChange={(editor)=>onCodeChange(editor)}
         style={{ fontSize: 20 }}
