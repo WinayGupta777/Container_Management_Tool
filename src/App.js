@@ -8,6 +8,7 @@ import Terminal from './components/system/Terminal';
 import DockerCLI from './components/docker/DockerCLI';
 import DockerGUI from './components/docker/DockerGUI';
 import AnsibleConfigureMain from './components/ansible/AnsibleConfigureMain';
+import AnsibleRoleMain from './components/ansible/AnsibleRoleMain';
 
 const darkTheme = createTheme({
   palette: { mode: 'dark' }
@@ -33,6 +34,7 @@ const App = () => {
                 <Route path="docker/cli" element={<DockerCLI />} />
                 <Route path="docker/gui" element={<DockerGUI /> } />
                 <Route path="ansible/configure" element={<AnsibleConfigureMain /> } />
+                <Route path="ansible/roles" element={<AnsibleRoleMain /> } />
               </Route>
             </Routes>
           </Router>

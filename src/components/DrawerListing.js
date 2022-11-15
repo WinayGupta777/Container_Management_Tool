@@ -244,7 +244,7 @@ const AnsibleCollapse = (props) => {
                     <ListItemText primary="Playbooks" />
                 </ListItemButton>
                 <Divider sx={{ marginLeft: 5 }} />
-                <ListItemButton sx={{ pl: 5 }}>
+                <ListItemButton sx={{ pl: 5 }} onClick={() => navigate("ansible/roles")}>
                     <ListItemIcon>
                         <FolderOpenIcon />
                     </ListItemIcon>
