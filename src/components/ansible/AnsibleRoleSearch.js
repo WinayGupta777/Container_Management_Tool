@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, IconButton, InputBase, Paper, Typography } from '@mui/material';
+import { Box, InputBase, Paper, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 const AnsibleRoleSearch = () => {
