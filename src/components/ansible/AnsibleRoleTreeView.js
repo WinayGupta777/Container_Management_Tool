@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Box, Collapse, Divider, IconButton, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useSelector } from 'react-redux';
 
 const AnsibleRoleTreeView = () => {
     const [expanded, setExpanded] = useState(false);
-
+    const globeTheme = useSelector((state) => state.themeReducer.theme);
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
@@ -12,7 +13,7 @@ const AnsibleRoleTreeView = () => {
         <Box
             sx={{
                 height: expanded ? 320 : 40, width: 265, minHeight: 40, p: '20px',
-                backgroundColor: '#313131', borderRadius: 5, transition: '0.2s ease'
+                backgroundColor: globeTheme ? '#313131' : '#e6ffec', borderRadius: 5, transition: '0.2s ease'
             }}
         >
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
