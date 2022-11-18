@@ -9,7 +9,7 @@ const AnsibleRoleList = () => {
     return (
         <Box
             sx={{
-                height: 250, width: '70%', p: '20px', borderRadius: 5,
+                height: 'calc(100% - 40px)', padding: '20px', borderRadius: 5,
                 backgroundColor: globeTheme ? '#121212' : '#e6ffec',
             }}
         >
@@ -17,11 +17,12 @@ const AnsibleRoleList = () => {
                 hideFooter={true}
                 rowsPerPageOptions={[5]}
                 onRowClick={() => console.log("Row selected")}
-                columns={[{ field: 'Role name', width: 200 }]}
+                columns={[{ field: 'Role name', width: 300 }]}
                 rows={[
                     { id: 1, 'Role name': 'ansible_freeipa', },
                     { id: 2, 'Role name': 'linux_system_roles' }
                 ]}
+                sx={{fontSize: 20}}
             />
         </Box>
     )

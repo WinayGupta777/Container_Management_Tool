@@ -12,7 +12,7 @@ const AnsibleRoleTreeView = () => {
     return (
         <Box
             sx={{
-                height: expanded ? 320 : 40, width: 265, minHeight: 40, p: '20px',
+                height: expanded ? 'calc(100% - 40px)' : 40, width: 265, minHeight: 40, p: '20px',
                 backgroundColor: globeTheme ? '#313131' : '#e6ffec', borderRadius: 5, transition: '0.2s ease'
             }}
         >
@@ -55,7 +55,7 @@ const ViewGround = () => {
     return (
         <Box
             component="pre"
-            sx={{ fontSize: 21, height: 290, overflow: 'scroll' }}
+            sx={{ fontSize: 21, height: 'auto', overflow: 'scroll' }}
         >
             {value}
         </Box>
