@@ -7,11 +7,12 @@ import { bbedit } from '@uiw/codemirror-theme-bbedit';
 import SaveIcon from '@mui/icons-material/Save';
 import { useSelector } from 'react-redux';
 import "../../css/AnsibleConfigureMain.css";
+import "../../css/Editor.css";
 
 const AnsibleConfigurationCfg = () => {
   const globeTheme = useSelector((state) => state.themeReducer.theme);
-  const cfgData = 
-`[defaults]
+  const cfgData =
+    `[defaults]
 inventory = /etc/ansible/hosts
 
 [privilege_escalation]
@@ -19,13 +20,13 @@ become = yes
 become_method = sudo
 become_user = root
 become_ask_pass = no`;
-  
+
   return (
     <Box className='cfg'>
       <div className='fileheader'>
         <div id='fileBlock'>
           <Typography sx={{ p: 1, fontFamily: 'consolas', fontWeight: '600' }}>ansible.cfg</Typography>
-          <Box 
+          <Box
             className='fileLoc'
             sx={{ backgroundColor: globeTheme ? '#282a36' : '#e6ffec' }}
           >/etc/ansible/ansible.cfg</Box>
@@ -34,16 +35,17 @@ become_ask_pass = no`;
           <SaveIcon />
         </IconButton>
       </div>
-      <Divider />
 
-      <CodeMirror
-        width='auto'
-        height='82vh'
-        value={cfgData}
-        theme={globeTheme ? dracula : bbedit}
-        //onChange={(editor)=>onCodeChange(editor)}
-        style={{ fontSize: 20 }}
-      />
+      <div className="editorBox">
+        <Divider />
+        <CodeMirror
+          width='auto'
+          value={cfgData}
+          theme={globeTheme ? dracula : bbedit}
+          //onChange={(editor)=>onCodeChange(editor)}
+          style={{ fontSize: 20, flex: 1 }}
+        />
+      </div>
     </Box>
   )
 }

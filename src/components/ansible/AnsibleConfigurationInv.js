@@ -7,11 +7,12 @@ import { bbedit } from '@uiw/codemirror-theme-bbedit';
 import SaveIcon from '@mui/icons-material/Save';
 //import { loadLanguage } from '@uiw/codemirror-extensions-langs';
 import "../../css/AnsibleConfigureMain.css";
+import "../../css/Editor.css";
 
 const AnsibleConfigurationInv = () => {
   const globeTheme = useSelector((state) => state.themeReducer.theme);
-  const invData = 
-`[dev]
+  const invData =
+    `[dev]
 node1.example.com
 
 [test]
@@ -33,16 +34,17 @@ node[3:4].example.com`;
           <SaveIcon />
         </IconButton>
       </div>
-      <Divider />
 
-      <CodeMirror
-        width='auto'
-        height='82vh'
-        value={invData}
-        theme={globeTheme ? dracula : bbedit}
-        //onChange={(editor)=>onCodeChange(editor)}
-        style={{ fontSize: 20 }}
-      />
+      <div className="editorBox">
+        <Divider />
+        <CodeMirror
+          width='auto'
+          value={invData}
+          theme={globeTheme ? dracula : bbedit}
+          //onChange={(editor)=>onCodeChange(editor)}
+          style={{ fontSize: 20, flex: 1 }}
+        />
+      </div>
     </Box >
   )
 }

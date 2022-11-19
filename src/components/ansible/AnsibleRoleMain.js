@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import AnsibleRoleSearch from './AnsibleRoleSearch';
 import AnsibleRoleTreeView from './AnsibleRoleTreeView';
 import AnsibleRoleList from './AnsibleRoleList';
+import AnsibleRoleEditor from './AnsibleRoleEditor';
 import "../../css/AnsibleRoleMain.css";
 
 const AnsibleRoleMain = () => {
@@ -20,7 +21,9 @@ const AnsibleRoleMain = () => {
       <div className="treebox">
         <AnsibleRoleTreeView />
       </div>
-      <div className="editorbox"> </div>
+      <div className="editorbox">
+        <AnsibleRoleEditor />
+      </div>
     </Box>
   )
 }

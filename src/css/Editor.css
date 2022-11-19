@@ -1,0 +1,27 @@
+
+.fileheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+}
+
+.fileLoc {
+    font-family: 'consolas';
+    padding: 1.2px 3px;
+    border-radius: 3px;
+}
+#fileBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editorBox {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 35px);
+    margin-top: 45px;
+    overflow: scroll;
+}

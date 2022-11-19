@@ -33,7 +33,7 @@
     grid-column-end: 2;
 }
 .editorbox { 
-    background-color: #272727; 
+    /* background-color: #272727;  */
     grid-row-start: 3;
     grid-column-start: 2;
  

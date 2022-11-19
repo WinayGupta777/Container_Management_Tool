@@ -1,25 +1,11 @@
 .cfg, .inv {
-    margin: 2% 1%;
-    width: 48%;
-    height: 94;
+    position: sticky;
+    width: 100%;
+    height: calc(100% - 50px);
+    margin: 25px 10px;
     border: 1px solid rgb(58, 58, 58);
     border-radius: 5px;
     overflow: hidden;
-}
-
-.fileheader {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.fileLoc {
-    font-family: 'consolas';
-    padding: 1.2px 3px;
-    border-radius: 3px;
-}
-#fileBlock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
