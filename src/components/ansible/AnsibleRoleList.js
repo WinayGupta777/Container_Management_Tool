@@ -10,7 +10,7 @@ const AnsibleRoleList = () => {
         <Box
             sx={{
                 height: 'calc(100% - 40px)', padding: '20px', borderRadius: 5,
-                backgroundColor: globeTheme ? '#121212' : '#e6ffec',
+                backgroundColor: globeTheme ? '#272727' : '#e6ffec',
             }}
         >
             <DataGrid

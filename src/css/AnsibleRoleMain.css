@@ -7,7 +7,7 @@
     gap: 10px;
 }
 .rolebox {
-    background-color: #A55A5D; 
+    /* background-color: #A55A5D;  */
     grid-row-start: 1;
     grid-column-start: 1;
  
@@ -16,7 +16,7 @@
 }
 .searchbox {
 
-    background-color: #AC5E9A; 
+    /* background-color: #AC5E9A;  */
     grid-row-start: 1;
     grid-column-start: 6;
  
@@ -25,7 +25,7 @@
 }
 .treebox {
 
-    background-color: #597E8C; 
+    /* background-color: #597E8C;  */
     grid-row-start: 3;
     grid-column-start: 1;
  
@@ -33,7 +33,7 @@
     grid-column-end: 2;
 }
 .editorbox { 
-    background-color: #5BC9FD; 
+    background-color: #272727; 
     grid-row-start: 3;
     grid-column-start: 2;
  

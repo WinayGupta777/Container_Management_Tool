@@ -9,7 +9,7 @@ const AnsibleRoleMain = () => {
   return (
     <Box
       className='mainbox'
-      sx={{ ml: "332px", pt: "63px", height: "calc(100vh - 63px)" }}
+      sx={{ ml: "342px", paddingBottom: "10px", pt: "73px", height: "calc(100vh - 83px)" }}
     >
       <div className="rolebox">
         <AnsibleRoleList />

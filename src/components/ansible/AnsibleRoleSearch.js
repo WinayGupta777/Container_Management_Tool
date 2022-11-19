@@ -9,7 +9,7 @@ const AnsibleRoleSearch = () => {
     return (
         <Box
             sx={{ height: 'calc(100% - 40px)' ,padding: '20px 20px',
-            backgroundColor: globeTheme ? '#313131' : '#e6ffec', borderRadius: 5 }}
+            backgroundColor: globeTheme ? '#272727' : '#e6ffec', borderRadius: 5 }}
         >
             <Typography sx={{ fontSize: 21 }} >Search roles</Typography>
             <Paper

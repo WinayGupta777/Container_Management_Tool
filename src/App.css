@@ -9,10 +9,10 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  background: transparent
+  width: 5px;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgb(107, 107, 107);
+  background: #414141;
   border-radius: 10px;
 }
