@@ -1,0 +1,41 @@
+.mainbox {
+    display: grid; 
+
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+    gap: 10px;
+}
+.rolebox {
+    /* background-color: #A55A5D;  */
+    grid-row-start: 1;
+    grid-column-start: 1;
+ 
+    grid-row-end: 3;
+    grid-column-end: 6;
+}
+.searchbox {
+
+    /* background-color: #AC5E9A;  */
+    grid-row-start: 1;
+    grid-column-start: 6;
+ 
+    grid-row-end: 6;
+    grid-column-end: 8;
+}
+.treebox {
+
+    /* background-color: #597E8C;  */
+    grid-row-start: 3;
+    grid-column-start: 1;
+ 
+    grid-row-end: 6;
+    grid-column-end: 2;
+}
+.editorbox { 
+    /* background-color: #272727;  */
+    grid-row-start: 3;
+    grid-column-start: 2;
+ 
+    grid-row-end: 6;
+    grid-column-end: 6; }

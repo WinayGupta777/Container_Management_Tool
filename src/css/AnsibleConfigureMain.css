@@ -1,0 +1,11 @@
+.cfg, .inv {
+    position: sticky;
+    width: 100%;
+    height: calc(100% - 50px);
+    margin: 25px 10px;
+    border: 1px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
